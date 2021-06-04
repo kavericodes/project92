@@ -4,8 +4,8 @@ player2_name = localStorage.getItem("player_2");
 player1_score = 0;
 player2_score = 0;
 
-document.getElementById("player_1").innerHTML = player1_name + ":";
-document.getElementById("player_2").innerHTML = player2_name + ":";
+document.getElementById("player1_name").innerHTML = player1_name + ":";
+document.getElementById("player2_name").innerHTML = player2_name + ":";
 
 document.getElementById("player1_score").innerHTML = player1_score;
 document.getElementById("player2_score").innerHTML = player2_score;
@@ -17,6 +17,7 @@ function send(){
     number1 = document.getElementById("number1").value;
     number2 = document.getElementById("number2").value;
     actual_answer = parseInt(number1) * parseInt(number2);
+    console.log(actual_answer);
     question_number = "<h4>" + number1 + " X " + number2;
     input_box = "<br> Answer : <input type='text' id='input_check_box'>";
     check_button = "<br> <br> <button class='btn btn-info' onclick='check()'> Check </button>";
@@ -35,13 +36,13 @@ function check() {
     {
         if(answer_turn == "player1") 
         {
-            update_player1_score = player1_score + 1;
-            document.getElementById("player1_score").innerHTML = update_player1_score;
+            player1_score = player1_score + 1;
+            document.getElementById("player1_score").innerHTML = player1_score;
         }
         else
         {
-            update_player2_score = player2_score + 1;
-            document.getElementById("player2_score").innerHTML = update_player2_score;
+            player2_score = player2_score + 1;
+            document.getElementById("player2_score").innerHTML = player2_score;
         }
     }
     
